@@ -6,6 +6,7 @@ import templates from '../assests/templates.svg'
 import works from '../assests/works.svg'
 import report from '../assests/reports.svg'
 import adminPanel from '../assests/admin-panel.svg'
+import profile from '../assests/Profile.png'
 
 
 function Sidebar() {
@@ -43,7 +44,8 @@ function Sidebar() {
         }
       </div>
       <div className='position-absolute bottom-0 end-0'>
-        <h1>HEllo</h1>
+      <img src={profile} alt='' width={50} height={50}  className='mx-4 my-3'/>
+        
       </div>
     </div>
 
