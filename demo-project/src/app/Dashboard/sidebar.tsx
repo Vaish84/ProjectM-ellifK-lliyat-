@@ -21,22 +21,24 @@ function Sidebar() {
   ]
 
   const [selectedTab, setSelectedTab] = useState('/collections');
+  const [hoverTab, setHoverTab] = useState('/collections');
 
+  
   return (<>
     <div className='bg-dark text-white vh-100 pt-3 col-1 position-relative' style={{width:'min-content'}}>
-      <span className='text-center px-3'>
-        <img src={iconSvg} alt='' width={50} height={50} />
-        <span className='ps-3'>Müellif</span>
+      <span className='px-3'>
+        <img className='sidebar-icon' src={iconSvg} alt='' width={50} height={50} />
+        <span className='sidebar-heading ps-3'>Müellif</span>
       </span>
       <div>
         {
           list.map((res: any) => (<>
-            <div className={`py-2 pe-4 text-center ${selectedTab === res.link ? 'selected-sidebar' : ''}`} key={res.link}>
-              <a href={res.link} className='nav-link' onClick={() => setSelectedTab(res.link)}>
+            <div className={`my-1 px-2 text-center ${selectedTab === res.link || hoverTab === res.link ? 'selected-sidebar' : ''}`}  key={res.link}>
+              <a href={res.link} className='nav-link' onClick={() => setSelectedTab(res.link)} onMouseOver={() => setHoverTab(res.link)} onMouseLeave={() => setHoverTab('')}>
                 <div>
-                <img src={res.icon} alt='' width={25} height={25} />
+                <img src={res.icon} alt='' width={15} height={15} />
                 </div>
-                <span className='small'>{res.label}</span>
+                <span className='sidebar-font'>{res.label}</span>
               </a>
             </div>
           </>
@@ -44,7 +46,7 @@ function Sidebar() {
         }
       </div>
       <div className='position-absolute bottom-0 end-0'>
-      <img src={profile} alt='' width={50} height={50}  className='mx-4 my-3'/>
+      <img src={profile} alt='' width={50} height={50}  className='mx-2 my-3'/>
         
       </div>
     </div>
