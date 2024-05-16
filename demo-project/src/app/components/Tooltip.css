@@ -1,0 +1,19 @@
+.tooltip-containers {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltips {
+    visibility: visible;
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 1;
+    width: max-content;
+  }
+  
+  .tooltip-containers:hover .tooltips {
+    visibility: visible;
+  }

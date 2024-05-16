@@ -5,6 +5,7 @@ import Sidebar from './app/Dashboard/sidebar';
 import MenuItem from './app/Dashboard/menuItem';
 import TopBar from './app/Dashboard/topBar';
 import FilterComp from './app/Main/filter';
+import UtilityPage from './app/Main/utilityPage';
 
 function App() {
   return (
@@ -21,10 +22,13 @@ function App() {
         </div>
         <div className='col-9'>
           <div className='bg-color'>
-            <FilterComp></FilterComp>
+            <UtilityPage/>
           </div>
         </div>
       </div>
+      {/* <div className='col-8'>
+          <UtilityPage/>
+        </div> */}
 
     </>
 
