@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import close from '../assests/closeFilter.svg'
 import downArrow from '../assests/down-arrow.svg'
-
+ 
 
 function MultiSelectList(props: any) {
     const [selectedItems, setSelectedItems] = useState<any>([]);

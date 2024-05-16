@@ -10,25 +10,23 @@ import UtilityPage from './app/Main/utilityPage';
 function App() {
   return (
     <>
-      <div className='row container p-0'>
-        <div className='d-flex col-3'>
-          <div className='overflow-auto'>
-            <Sidebar></Sidebar>
-          </div>
-          <div className='menuItem overflow-auto'>
-            <MenuItem></MenuItem>
-          </div>
 
+      <div className='row p-0 secondary-bgcolor'>
+        <div className='col-1'>
+          <Sidebar></Sidebar>
         </div>
-        <div className='col-9'>
-          <div className='bg-color'>
-            <UtilityPage/>
+        <div className='col-3 p-0'>
+          <MenuItem></MenuItem>
+        </div>
+        <div className='col-8 p-0'>
+          <div className='m-2 position-sticky '>
+            <TopBar></TopBar>
+          </div>
+          <div className='m-3'>
+            <UtilityPage />
           </div>
         </div>
       </div>
-      {/* <div className='col-8'>
-          <UtilityPage/>
-        </div> */}
 
     </>
 

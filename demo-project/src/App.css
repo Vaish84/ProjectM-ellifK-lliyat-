@@ -1,6 +1,7 @@
-*{
+* {
   font-family: Mecellem, sans-serif;
 }
+
 .bg-color {
   background: #F5F7F8 0% 0% no-repeat padding-box;
 }
@@ -64,15 +65,58 @@
   opacity: 1;
 }
 
+input[type=text] {
+  caret-color: #FFAF2E;
+  background-color: #F5F8FA;
+}
+
+input[type=text]::placeholder {
+  color: #768995;
+}
 
 input[type='checkbox'] {
   accent-color: #FFAF2E;
 }
 
-.secondary-bgcolor{
+.secondary-bgcolor {
   background: #F5F7F8 0% 0% no-repeat padding-box;
 }
 
-.btn-secondary{
+.btn-secondary {
   background: #EFF2F5 0% 0% no-repeat padding-box !important;
- }
+}
+
+.secondary-color{
+  color: #768995;
+}
+.mainbody {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border-radius: 5px 5px 0px 0px;
+  opacity: 1;
+}
+
+.breadcrumbs {
+  font-size: 14px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #768995;
+}
+
+.breadcrumbs .current-page {
+  color: #0A0E12;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Styles for medium-sized screens */
+}
+@media only screen and (min-width: 1025px) {
+  /* Styles for large screens */
+}

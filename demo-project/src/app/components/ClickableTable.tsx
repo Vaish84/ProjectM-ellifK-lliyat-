@@ -5,11 +5,6 @@ import info from '../assests/information.svg'
 import play from '../assests/continue.svg'
 import link from '../assests/copyurl.svg'
 import view from '../assests/preview.svg'
-
-
-
-
-
 import { useState } from "react";
 import "./ClickableTable.css"
 import RowExpendedView from './RowExpendedView';
@@ -41,7 +36,7 @@ function TableRow(props: any) {
 
             ) : <>
                 <tr style={{ cursor: 'pointer' }}>
-                    {props.headerData.map((key: any, index: number) => (
+                    {props.headerData?.map((key: any, index: number) => (
                         <>
                             {key.id == "actions" ? <>
                                 <td>
@@ -57,14 +52,14 @@ function TableRow(props: any) {
                                 </td>
                             </> : key.id == "expand" ? <td>
                                 <div className="d-flex justify-content-center align-items-center">
-                                    <svg onClick={handleClick} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down" viewBox="0 0 16 16">
+                                    <svg onClick={handleClick} xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-chevron-down mx-2" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708" />
                                     </svg>
                                     {props.rowData[key.id] == 'active' ? <>
-                                        <img src={starFilled} width={15} height={15} />
+                                        <img className='mx-2' src={starFilled} width={15} height={15} />
                                     </> :
                                         <>
-                                            <img src={starEmpty} width={15} height={15} />
+                                            <img className='mx-2' src={starEmpty} width={15} height={15} />
                                         </>
                                     }
                                 </div>
@@ -88,7 +83,7 @@ function ClickableTable(props: any) {
         <table width={"100%"}>
             <thead>
                 <tr>
-                    {props.tableData.tableHeader.map((headerData: any, index: number) => (
+                    {props.tableData?.tableHeader?.map((headerData: any, index: number) => (
                         <th key={index} className="p-1">
                             <span>
                                 {headerData.name}
@@ -102,7 +97,7 @@ function ClickableTable(props: any) {
                 </tr>
             </thead>
             <tbody>
-                {props.tableData.tableContent.map((rowData: any, index: number) => (
+                {props.tableData?.tableContent?.map((rowData: any, index: number) => (
                     <TableRow key={index} rowData={rowData} headerData={props.tableData.tableHeader} onClick={handleRowClick} />
                 ))}
             </tbody>
