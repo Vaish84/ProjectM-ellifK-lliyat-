@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import close from '../assests/closeFilter.svg'
 import downArrow from '../assests/down-arrow.svg'
- 
+
 
 function MultiSelectList(props: any) {
     const [selectedItems, setSelectedItems] = useState<any>([]);
@@ -15,18 +15,34 @@ function MultiSelectList(props: any) {
 
     const handleCheckboxChange = (event: any) => {
         const { value, checked } = event.target;
-        if (value === "selectAll") {
+        if (value === "selectAll" && checked) {
             setSelectAll(checked);
-            setSelectedItems(checked ? options : []);
-        } else {
-            setSelectedItems((prevSelectedItems: any) => {
-                if (checked && !prevSelectedItems.includes(value)) {
-                    return [...prevSelectedItems, value];
-                } else if (!checked) {
-                    return prevSelectedItems.filter((item: any) => item !== value);
+            let tempSelected: any[] = [];
+            setListItems(listItems.map((el: any) => {
+                tempSelected.push(el.label)
+                return { ...el, checked: true }
+            }))
+            setSelectedItems(tempSelected);
+        }
+        else {
+            if (!checked) {
+                setSelectAll(false)
+            }
+                let tempSelected: any[] = [];
+            setListItems(listItems.map((el: any) => {
+                if (value == el.label) {
+                    if (checked) {
+                        tempSelected.push(value)
+                    }
+                    return { ...el, checked: checked }
+                } else {
+                    if (el.checked) {
+                        tempSelected.push(el.label)
+                    }
+                    return el
                 }
-                return prevSelectedItems;
-            });
+            }))
+            setSelectedItems(tempSelected);
         }
     };
 
@@ -34,7 +50,13 @@ function MultiSelectList(props: any) {
         setSelectedItems((prevSelectedItems: any) =>
             prevSelectedItems.filter((item: any) => item !== itemToRemove)
         );
-
+        setListItems(listItems.map((el: any) => {
+            if (itemToRemove == el.label) {
+                return { ...el, checked: false }
+            } else {
+                return el
+            }
+        }))
     };
 
     return (
@@ -62,7 +84,7 @@ function MultiSelectList(props: any) {
                         ) : (
                             <div className=' d-flex justify-content-between'>
                                 <div className='text-secondary'> Choose</div>
-                                <div> <img  src={downArrow} width={10} height={10} />
+                                <div> <img src={downArrow} width={10} height={10} />
                                 </div>
                             </div>
 
@@ -88,7 +110,7 @@ function MultiSelectList(props: any) {
                         listItems?.map((res: any) => (<>
                             <li key={res.id} className='border-bottom'>
                                 <label>
-                                    <input type="checkbox" className='mx-3 my-2' value={res.label} onChange={handleCheckboxChange} />
+                                    <input type="checkbox" className='mx-3 my-2' checked={res.checked || selectAll} value={res.label} onChange={handleCheckboxChange} />
                                     {res.label}
                                 </label>
                             </li>

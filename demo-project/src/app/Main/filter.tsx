@@ -6,10 +6,10 @@ import MultiSelectList from './multiSelectlist';
 
 function FilterComp() {
     const IdList: any = [
-        { label: 'Legal', id: 1 },
-        { label: 'Penalty', id: 2 },
-        { label: 'Executive', id: 3 },
-        { label: 'Conciliation', id: 4 },
+        { label: 'Legal', id: 1 , checked :false},
+        { label: 'Penalty', id: 2,checked :false} ,
+        { label: 'Executive', id: 3,checked :false} ,
+        { label: 'Conciliation', id: 4 ,checked :false},
     ]
     const [filterOpen, setFilterOpen] = useState(false)
     const openFilter = () => {
