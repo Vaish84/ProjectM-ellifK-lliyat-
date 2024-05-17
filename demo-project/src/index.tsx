@@ -4,21 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { createStore, applyMiddleware, Store } from "redux"
-import reducer from './app/store/reducer';
-import { thunk } from 'redux-thunk';
 import { Provider } from 'react-redux';
-
-const store: Store<TableDataState, TableAction> & {
-  dispatch: DispatchType
-} = createStore(reducer, applyMiddleware(thunk))
+import store from './app/store/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+      <Provider store={store}>
     <App />
   </Provider>,
   </React.StrictMode>
