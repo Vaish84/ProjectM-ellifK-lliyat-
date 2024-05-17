@@ -47,7 +47,7 @@ function ManuItem() {
     const handleTabHover = (index: any, link: any) => {
         const newSelectedTabs = [...hoverTabs];
         newSelectedTabs[index] = link;
-        debugger
+         
         setHoverTabs(newSelectedTabs);
     };
     const handleTableave = () => {
