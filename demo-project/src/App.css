@@ -108,6 +108,31 @@ input[type='checkbox'] {
   color: #0A0E12;
 }
 
+.parent-sidebar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+}
+
+
+body {
+  overflow-x: hidden;
+}
+
+.row {
+  overflow-x: hidden; 
+}
+
+.col-8 {
+  overflow-y: auto; 
+}
+
+.col-1,
+.col-3 {
+  overflow: hidden;
+}
 
 
 @media only screen and (max-width: 600px) {

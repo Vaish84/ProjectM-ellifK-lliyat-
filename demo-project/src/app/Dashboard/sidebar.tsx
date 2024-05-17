@@ -25,7 +25,7 @@ function Sidebar() {
 
 
   return (<>
-    <div className='bg-dark text-white vh-100 pt-3 position-relative' style={{ maxWidth: 'max-content' }}>
+    <div className='bg-dark text-white pt-3 parent-sidebar' style={{ maxWidth: 'max-content' }}>
       <div className='px-3  text-center'>
 
         <img className='sidebar-icon' src={iconSvg} alt='' width={50} height={50} />
@@ -47,11 +47,9 @@ function Sidebar() {
         }
       </div>
       <div className='position-absolute bottom-0 '>
-        <div className=' text-center'>
+        <div className='text-center'>
         <img src={profile} alt='' width={50} height={50} className='my-3 mx-4' />
-
         </div>
-
       </div>
     </div>
 

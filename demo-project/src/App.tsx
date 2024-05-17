@@ -12,14 +12,14 @@ function App() {
     <>
 
       <div className='row p-0 secondary-bgcolor'>
-        <div className='col-1'>
+        <div className='col-1 position-fixed'>
           <Sidebar></Sidebar>
         </div>
-        <div className='col-3 p-0'>
+        <div className='col-3 p-0 position-fixed offset-1'>
           <MenuItem></MenuItem>
         </div>
-        <div className='col-8 p-0'>
-          <div className='m-2 position-sticky '>
+        <div className='col-8 p-0 offset-4'>
+          <div className='m-2 position-sticky top-0 z-1 shadow'>
             <TopBar></TopBar>
           </div>
           <div className='m-3'>
